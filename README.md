@@ -1,10 +1,10 @@
 ##Nodejs Example -         
 
-+Simple Chat Server - "http" Module   
-+File I/O - Manipulation of Filesystem - Common "fs" Module    
-+Templating - "Mustache"/"Mu" Module    
+1.Simple Chat Server - "http" Module   
+2.File I/O - Manipulation of Filesystem - Common "fs" Module    
+3.Templating - "Mustache"/"Mu" Module    
 
 ##Phantomjs -     
-+Document Scraper     
-+Simple Web Crawler   
-+Inject Jquery    
+1.Document Scraper     
+2.Simple Web Crawler   
+3.Inject Jquery   
