@@ -24,7 +24,7 @@ net.createServer(function(newClient) {
                      do stuff...                                                                                                                              
                   });                                                                                                                                         
 	*/
-	//but here we use carrier because we want the data sent when client type in a new-line character.                                             
+	//but here we use carrier because we want the data sent when clients type in a new-line character.                                             
 	//keep track of the data parsed by the client(message ended by new-line)   
 	var username = null;
 	carrier.carry(newClient, function (line) {
