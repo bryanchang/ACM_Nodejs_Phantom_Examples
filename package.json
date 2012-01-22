@@ -1,0 +1,12 @@
+{
+	name:"examples",
+	dependencies:{
+		"carrier": ">= 0.1.3"
+	},
+	version:"0.0.1",
+	author: {
+		name: "Jackie",
+		email: "liveaeon@gmail.com"
+	},	
+	engine: ["node >= 0.4.0"]
+}
