@@ -18,7 +18,10 @@ net.createServer(function(newClient) {
 	//to the CLIENT, not the console!
 	newClient.write("Hi buddy! Welcome to the jungle\n");
 	newClient.write("Show us who you are (Your name should be only one word):\n");
-	
+	//let everyone know the new client has joined
+	for (var index = 0 ; index < connectedClient.length ; index++) {
+	    connectedClient[index].write("A new buddy has joined us!\n");
+	}
 	/*this is how we usually process data sent by the client:                                                                                     
                   newClient.on('data', function (data) {                                                                                                      
                      do stuff...                                                                                                                              
