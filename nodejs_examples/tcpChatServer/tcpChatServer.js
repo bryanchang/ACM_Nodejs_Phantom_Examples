@@ -53,7 +53,7 @@ net.createServer(function(newClient) {
 		    }
 		    
 		    //add a header to the message
-		    var completeMessage = username + "> " + line;
+		    var completeMessage = "\n" + username + "> " + line + "\n";
 		    //distributing the message to each listed client
 		    for (var index = 0 ; index < connectedClients.length ; index++) {
 			connectedClients[index].write(completeMessage);
@@ -70,6 +70,11 @@ net.createServer(function(newClient) {
 		//use the splice method for removal;
 		if (index >= 0) {
 		    connectedClients.splice(index, 1);
+		}
+		
+		//inform everyone this user quit
+		for(var index = 0 ; index < connectedClients.length ; index++) {
+		    connectedClients[index].write("Ooops, we lost " + username + "! Hope people treat " + username + "in the outside world...");
 		}
 	    });
     }).listen(8000);
