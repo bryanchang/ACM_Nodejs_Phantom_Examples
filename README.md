@@ -10,17 +10,17 @@
 3.Inject Jquery   
 
 ##Nodejs Setup   
--->###Ubuntu     
+###Ubuntu     
 		 sudo apt-get install python-software-properties
 		 sudo add-apt-repository ppa:chris-lea/node.js
 		 sudo apt-get update
 		 sudo apt-get install nodejs     
--->###Archlinux     
+###Archlinux     
 		 sudo pacman -S nodejs    
--->###Fedora
+###Fedora
 		 sudo yum localinstall --nogpgcheck http://nodejs.tchol.org/repocfg/fedora/nodejs-stable-release.noarch.rpm
 		 sudo yum install nodejs      
--->###Mac    
+###Mac    
 download the installer [here](http://nodejs.org/dist/v0.6.8/node-v0.6.8.pkg)      
 or      
 (If [Macports](http://www.macports.org/) is installed on your Mac)      
@@ -28,15 +28,15 @@ or
 or      
 (If [Homebrew](http://mxcl.github.com/homebrew/) is installed on your Mac)     
     brew install node        
--->###Windows     
+###Windows     
 download the installer [here](http://nodejs.org/dist/v0.6.8/node-v0.6.8.msi) and install it following the instruction    
 
 ##Telnet Client Setup     
--->###Windows    
+###Windows    
 Open the Command Prompt on Windows and type in the following command    
      pkgmgr /iu:"TelnetClient"     
--->###Ubuntu    
+###Ubuntu    
 		sudo apt-get install telnetd     
--->###Mac OS      
+###Mac OS      
 Telnet should come with Mac OS but if you don't have it already, download it [here](http://www.mactelnet.com/)    
    
