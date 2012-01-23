@@ -78,7 +78,8 @@ net.createServer(function(newClient) {
 		
 		//inform everyone this user quit
 		for(var index = 0 ; index < connectedClients.length ; index++) {
-		    connectedClients[index].write("Ooops, we lost " + username + "! Hope people treat " + username + "in the outside world...");
+		    connectedClients[index].write("Ooops, we lost " + username + "! Hope people treat " 
+						  + username + " well in the outside world...");
 		}
 	    });
     }).listen(8000);
