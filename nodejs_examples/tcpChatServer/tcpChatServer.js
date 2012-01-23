@@ -36,8 +36,8 @@ net.createServer(function(newClient) {
 			username = validity[1];
 			newClient.write("Sup "+username+"!\n");
 			//inform client list
-			for(var index = 0 ; index < connectedClient.length ; index++) {
-			    connectedClient[index].write(username + " joined the channel!\n");
+			for(var index = 0 ; index < connectedClients.length ; index++) {
+			    connectedClients[index].write(username + " joined the channel!\n");
 			}
 		    }
 		    else {
