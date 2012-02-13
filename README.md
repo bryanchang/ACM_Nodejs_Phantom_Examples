@@ -4,6 +4,7 @@
 2.File I/O - Manipulation of Filesystem - Common "fs" Module    
 3.Templating - "Mustache"/"Mu" Module    
 4.Child process.
+5.Database with MongoDB and Mongoose
 
 ##Phantomjs -     
 1.Document Scraper     
