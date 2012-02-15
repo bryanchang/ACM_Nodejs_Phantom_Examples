@@ -26,9 +26,6 @@ var URLSuffixes = {
     "cs181":"0181++++"
 };//incomplete, enough for demo
 
-Job.queue = [];
-Job.page = require('webpage').create();
-
 //employ a simple job/mechanism
 var Job = function (url, func, obj, classTitle) {
     this.url = url;
@@ -36,50 +33,53 @@ var Job = function (url, func, obj, classTitle) {
     this.obj = obj;
     this.classTitle = classTitle;
     Job.queue.push(this);
-}
+};
+
+Job.queue = [];
+Job.page = require('webpage').create();
 
 //shift out next request
 Job.next = function () {
     var job = Job.queue.shift();
     if(job) {
 	console.log("Opening "+job.url+"...")
-	Job.page.open(job.url, function(status) {
-	    if (status === "success") {
-		console.log("Success!");
-		job.func.call(job.obj,Job.page,job.classTitle);
-		Job.next();
+	    Job.page.open(job.url, function(status) {
+		    if (status === "success") {
+			console.log("Success!");
+			job.func.call(job.obj,Job.page,job.classTitle);
+			Job.next();
+		    }
+		    else {
+			//reconnect
+			console.log("Retrying");
+			Job.queue.unshift(job);
+			Job.next();
+		    }
+		})
 	    }
-	    else {
-		//reconnect
-		console.log("Retrying");
-		Job.queue.unshift(job);
-		Job.next();
-	    }
-	})
-    }
     else{
 	if (Job.onTerminate) Job.onTerminate();
 	phantom.exit();
     }
-}
+};
 
 //terminate
 Job.onTerminate = function () {
     require('fs').write('../nodejs_examples/meta/UCLACSClass.json',JSON.stringify(docMeta),'w');
     console.log("done");
-}
+};
 
 //scrape the decription 
 var scraper = function(page, title) {
     
     this[title] = page.evaluate(function() {
-	var description;
-	
-	
-	
-	return description;
-    });
-    
+	    var courseObj = {};
+	    //class status
+	    courseObj.status = document.querySelector('#ctl00_BodyContentPlaceHolder_detselect_ctl02_ctl02_Status').textContent.replace(/\s/g,"");
+	    //class description
+	    courseObj.des = document.querySelector('#ctl00_BodyContentPlaceHolder_detselect_lblClassNotes').textContent;
+	    return courseObj;
+	});
 };
 
 //create new jobs
