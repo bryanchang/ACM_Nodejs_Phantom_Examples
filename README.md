@@ -2,6 +2,8 @@
 
 ##Nodejs Example -         
 
+try the socket.io example [here] (http://tinydots.org/ACM_Nodejs_Phantom_Examples/nodejs_examples/httpChatServer/index.html)
+
 1.Simple Chat Server - "net" Module, "carrier" Module   
 	 ==>http chat Server on Socket.io
 2.File I/O - Manipulation of Filesystem - Common "fs" Module    
