@@ -1,7 +1,8 @@
 {
 	"name":"examples",
 	"dependencies":{
-		"carrier": ">= 0.1.0"
+		"carrier": ">= 0.1.0",
+		"jsdom": ">=0.2.10"
 	},
 	"version":"0.0.1",
 	"author": {

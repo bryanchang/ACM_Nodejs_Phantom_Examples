@@ -43,3 +43,4 @@ Open the Command Prompt on Windows and type in the following command
 ###Mac OS      
 Telnet should come with Mac OS but if you don't have it already, download it [here](http://www.mactelnet.com/)    
    
+##[Phantomjs Installation Guide] (http://code.google.com/p/phantomjs/wiki/Installation)
