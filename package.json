@@ -2,7 +2,9 @@
 	"name":"examples",
 	"dependencies":{
 		"carrier": ">= 0.1.0",
-		"jsdom": ">=0.2.10"
+		"jsdom": ">=0.2.10",
+		"socket.io": ">=0.8.7",
+		"ws": ">=0.4.6"
 	},
 	"version":"0.0.1",
 	"author": {
