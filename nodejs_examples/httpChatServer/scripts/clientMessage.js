@@ -1,3 +1,28 @@
+//mapping for emoticons
+var emoticons = {
+    "kidding":"areyoufuckingkiddingme.png",
+    "asoo":"asoo.png",
+    "cry":"epiccry.png",
+    "fap":"fapfapfap.png",
+    "ffff":"ffff.png",
+    "alone":"foreveralonedance.gif",
+    "bitchplease":"fuckthatshit.png",
+    "fuckyea":"fuckyea.png",
+    "fuuu":"fuuu.png",
+    "derp":"herpderp.png",
+    "hipster":"hipsterlink.jpg",
+    "ladies":"ladies.jpg",
+    "letsdothis":"letsdothis.png",
+    "lol":"lololol.gif",
+    "megusta":"megusta.jpg",
+    "nobody":"nobody.jpg",
+    "nowkiss":"nowkiss.jpg",
+    "okay":"okaywalk.gif",
+    "omg":"omgomgomg.gif",
+    "trolldad":"trolldad.png",
+    "yuno":"yuno.png"
+}
+
 //start when the page documents are fully loaded
 //Jquery
 $(document).ready(function(){
@@ -28,8 +53,17 @@ $(document).ready(function(){
     
     // listen for chat event and recieve data from the server
     socket.on('chat', function (data) {
-        // print data (jquery thing)
-        $("#chatLog").append("<li>" + data.msgr + ': ' + data.msg + "</li>");
+        //let's troll on message processing!!
+        var emoticonTest = /(.*)\\(.*)\\(.*)/.exec(data.msg);
+        if(emoticonTest && emoticons[emoticonTest[2]]) {
+            $("#chatLog").append("<li>" + data.msgr + ': ' + emoticonTest[1] +
+            "<img" + " src=\"emoticons/" + emoticons[emoticonTest[2]] + "\"" + 
+            " alt=\"" + emoticonTest[2] +"\" />" +emoticonTest[3] + "</li>");
+        }
+        else {
+            // print data (jquery thing)
+            $("#chatLog").append("<li>" + data.msgr + ': ' + data.msg + "</li>");
+        }
         //scroll the output, keyboard input always focus on the input element
         window.scrollBy(0, -1000000000000000);
         input.focus();
